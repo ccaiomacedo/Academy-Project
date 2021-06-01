@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<htmlxmlns:th"http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+		<title>Projeto Academy</title>
+		<meta name="author" content="Caio Macedo" />
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://kit.fontawesome.com/006642858d.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+			rel="stylesheet">
+
+	</head>
+	<body>
+		<div th:replace="fragmentos/fragmentos :: cabecalho"></div><!-- include -->
+		
+		<div class="container" style="margin-top:50px;">
+		<h3>Alunos Cancelados</h3>
+		<hr>
+		<table class="table table-bordered table-hover">
+		
+		<thead>
+			<tr>
+				<th scope="col">Nome</th>
+				<th scope="col">Curso</th>
+				<th scope="col">Matricula</th>
+				<th scope="col">Status</th>
+				<th scope="col">Turno</th>
+				<th scope="col" colspan="2">Ação</th>
+			</tr>
+		
+		</thead>
+		<tbody>
+			<tr scope="row" th:each="alunos:${alunosCancelados}"><!-- estou percorrendo a lista de alunosList que está na controller -->
+				<td th:text="${alunos.nome}"></td>
+				<td th:text="${alunos.curso}"></td>	
+				<td th:text="${alunos.matricula}"></td>	
+				<td th:text="${alunos.status}"></td>	
+				<td th:text="${alunos.turno}"></td>
+				
+				<td><a class="btn btn-primary" th:href="@{alterar/{id}(id=${alunos.id})}"><i class="fas fa-edit"></i>Editar</a></td><!-- @ é por conta de link -->		
+				<td><a class="btn btn-danger"  th:href="@{excluir/{id}(id=${alunos.id})}"><i class="fas fa-times"></i>Excluir</a></td>					
+			</tr>	
+		</tbody>
+		
+		</table>
+		
+		</div>
+	
+		<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>

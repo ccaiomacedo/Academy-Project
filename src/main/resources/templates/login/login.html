@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html xmlns:th"http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+		<title>Projeto Academy - Login</title>
+		<meta name="author" content="Caio Macedo" />
+		<link rel="stylesheet" href="css/login.css">
+		<script src="https://kit.fontawesome.com/006642858d.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+			rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="Login-Form">
+			<div class="container">
+				<div class="main-div">
+					<div class="texto-header">
+						<h2>Admin Login</h2>
+						<p>Insira suas credenciais para efetuar login no sistema.</p>				
+					</div>
+					<form method="post" action="/login" th:object="${usuario}">
+						
+						<div class="alert alert-danger" role="alert" th:if="${msg}"><!-- o if é pq se tiver algum erro ele retorna verdadeiro -->
+							<strong th:text="${msg}"></strong>
+						</div>
+						
+						<div class="form-group">
+							<input type="text" th:field="*{user}"  class="form-control" placeholder="Username">
+						</div>
+						
+						<div class="form-group">
+							<input type="password" th:field="*{senha}" class="form-control" placeholder="Insira sua senha">
+						</div>
+						
+						<div class="cadastro">
+							<a th:href="@{/cadastro}">Não tem cadastro? clique aqui!</a>
+						</div>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
