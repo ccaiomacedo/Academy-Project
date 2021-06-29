@@ -1,6 +1,5 @@
 package br.com.academy.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +10,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "TB_usuario")
 public class Usuario {
 
 	@Id
@@ -20,7 +19,7 @@ public class Usuario {
 	@Email
 	private String email;
 	@Size(min = 3, max = 20, message = "Não pode conter menos que 3 caracteres, ou mais que 20!")
-	private String user;
+	private String login;
 	private String senha;
 
 	public Long getId() {
@@ -39,12 +38,12 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getUser() {
-		return user;
+	public String getlogin() {
+		return login;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setlogin(String login) {
+		this.login = login;
 	}
 
 	public String getSenha() {

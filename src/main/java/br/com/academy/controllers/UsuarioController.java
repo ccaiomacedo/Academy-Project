@@ -63,7 +63,7 @@ public class UsuarioController {
 		if(br.hasErrors()) {
 			mv.setViewName("login/login");//se tiver erro, volta pra mesma página por causa do BindingResult
 		}
-		Usuario userLogin = su.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
+		Usuario userLogin = su.loginUser(usuario.getlogin(), Util.md5(usuario.getSenha()));
 		if(userLogin==null) {
 			mv.addObject("msg","Usuário não encontrado.Tente novamente");
 		}else{
