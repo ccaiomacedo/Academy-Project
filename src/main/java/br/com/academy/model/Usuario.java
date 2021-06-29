@@ -19,7 +19,7 @@ public class Usuario {
 	@Email
 	private String email;
 	@Size(min = 3, max = 20, message = "Não pode conter menos que 3 caracteres, ou mais que 20!")
-	private String login;
+	private String nome;
 	private String senha;
 
 	public Long getId() {
@@ -38,12 +38,12 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getlogin() {
-		return login;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setlogin(String login) {
-		this.login = login;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getSenha() {

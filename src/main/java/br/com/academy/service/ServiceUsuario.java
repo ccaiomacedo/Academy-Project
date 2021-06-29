@@ -33,8 +33,8 @@ public class ServiceUsuario {
 	}
 	
 	//faz a verificação do usuario e senha passado
-	public Usuario loginUser(String user,String senha) throws ServiceExc { 
-		Usuario userLogin = repository.buscarLogin(user, senha);
+	public Usuario loginUser(String nome,String senha) throws ServiceExc { 
+		Usuario userLogin = repository.buscarLogin(nome, senha);
 		return userLogin;
 	}
 

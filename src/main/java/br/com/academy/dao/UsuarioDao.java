@@ -9,7 +9,7 @@ public interface UsuarioDao extends JpaRepository<Usuario, Long> {
 	@Query("select i from Usuario i where i.email=:email") // anotação do JPQL pra fazer um consulta específica
 	public Usuario findByEmail(String email);
 
-	@Query("select j from Usuario j where j.login=:login and j.senha=:senha")
-	public Usuario buscarLogin(String login, String senha);
+	@Query("select j from Usuario j where j.nome=:nome and j.senha=:senha")
+	public Usuario buscarLogin(String nome, String senha);
 
 }
