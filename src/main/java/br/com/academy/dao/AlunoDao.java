@@ -11,7 +11,7 @@ import br.com.academy.model.Aluno;
 repositórios, incluindo métodos como save, delete, findOne, entre outros.*/
 public interface AlunoDao extends JpaRepository<Aluno, Integer> {
 
-	@Query("select j from Aluno j where j.status = 'ATIVO' ")//anotação do JPQL pra fazer um consulta específica
+	@Query("select a from Aluno a where a.status = 'ATIVO' ")//anotação do JPQL pra fazer um consulta específica
 	public List<Aluno> findByStatusAtivos();
 	
 	@Query("select a from Aluno a where a.status = 'INATIVO' ")
